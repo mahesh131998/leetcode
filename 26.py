@@ -2,32 +2,23 @@
 
 def removeDuplicates(self, nums):
     n= len(nums)
-    print(n)
-    k=n
-    count=0
+    i=1
+    j=0
+    if 0 >= len(nums) >= 3*(10**4):
+        return 0
+    if n==0:
+        return 0
+    while j != n-1:
+        if nums[j]!=nums[j+1]:
+            nums[i]=nums[j+1]
+            i=i+1
+            
+        j=j+1
+    print(nums)
+    print(i)
 
-    for i in range(n):
-        for j in range(i+1,n):
-            if nums[i]== nums[j]:
-                count= count+1
-                print("count=",count)
-                print("nums i=",nums[i])
-                print("nums j=",nums[j])
-            # else:
-            #     s= i+1
-            #     p=j
-            #     print("s =",s)
-            #     print("p =",p)
-            #     while p!=k:
-            #         nums[s] = nums[p]
-            #         s= s+1
-            #         p=p+1
-                
-            #     k=k-count
-            #     count=0
+    return i,nums
 
-    return nums
-
-nums = [0,0,1,1,1,2,2,3,3,3,4]
+nums =[]
 g=removeDuplicates(0,nums)
-# print(g)
+print(g)
